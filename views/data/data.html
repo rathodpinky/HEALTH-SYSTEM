@@ -1,0 +1,50 @@
+<h4 class="mb-3">📊 All Stored Data</h4>
+
+<button class="btn btn-danger btn-sm mb-3" ng-click="clearAll()">Clear All Data</button>
+
+<!-- Patients -->
+<h5>Patients</h5>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Phone</th>
+    </tr>
+    <tr ng-repeat="p in patients">
+        <td>{{p.name}}</td>
+        <td>{{p.age}}</td>
+        <td>{{p.gender}}</td>
+        <td>{{p.phone}}</td>
+    </tr>
+</table>
+
+
+<!-- Appointments -->
+<h5>Appointments</h5>
+<table class="table table-bordered">
+    <tr>
+        <th>Token</th>
+        <th>Patient</th>
+        <th>Status</th>
+    </tr>
+    <tr ng-repeat="a in appointments">
+        <td>{{a.token}}</td>
+        <td>{{a.name}}</td>
+        <td>{{a.status}}</td>
+    </tr>
+</table>
+
+
+<!-- Clinics -->
+<h5>Clinics</h5>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+    <tr ng-repeat="c in clinics">
+        <td>{{c.name}}</td>
+        <td>{{c.address}}</td>
+    </tr>
+</table>
