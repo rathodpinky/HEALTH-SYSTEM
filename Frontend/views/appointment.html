@@ -1,0 +1,54 @@
+<h4>📅 Book Appointment</h4>
+
+<form ng-submit="bookAppointment()">
+
+    <!-- NEW DATE PICKER -->
+    <label>Select Date</label>
+    <input type="date"
+           class="form-control mb-2"
+           ng-model="appointment.date"
+           required>
+
+    <label>Select Patient</label>
+    <select class="form-control mb-2"
+            ng-model="appointment.patient"
+            ng-options="p.name for p in patients"
+            required>
+    </select>
+
+    <button class="btn btn-success">Generate Token</button>
+
+</form>
+
+<hr>
+
+<h5>Appointments List</h5>
+
+<table class="table table-bordered text-center">
+
+    <tr class="table-dark">
+        <th>Token</th>
+        <th>Name</th>
+        <th>Date</th>   <!-- NEW -->
+        <th>Status</th>
+        <th>Action</th> <!-- NEW -->
+    </tr>
+
+    <tr ng-repeat="a in appointments">
+
+        <td>{{a.token}}</td>
+        <td>{{a.name}}</td>
+        <td>{{a.date}}</td>  <!-- NEW -->
+        <td>{{a.status}}</td>
+
+        <!-- DELETE BUTTON -->
+        <td>
+            <button class="btn btn-danger btn-sm"
+                    ng-click="deleteAppointment($index)">
+                Delete
+            </button>
+        </td>
+
+    </tr>
+
+</table>

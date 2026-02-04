@@ -1,0 +1,56 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height:75vh;">
+
+    <div class="card p-4 shadow-lg" style="width:420px; border-radius:15px;">
+
+        <h4 class="text-center text-primary mb-4 fw-bold">
+            🏥 Patient Registration
+        </h4>
+
+        <form ng-submit="savePatient()">
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Full Name</label>
+                <input type="text"
+                       class="form-control"
+                       ng-model="patient.name"
+                       placeholder="Enter patient name"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Age</label>
+                <input type="number"
+                       class="form-control"
+                       ng-model="patient.age"
+                       placeholder="Enter age"
+                       required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Phone Number</label>
+                <input type="tel"
+                       class="form-control"
+                       ng-model="patient.phone"
+                       placeholder="Enter phone number"
+                       required>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Gender</label>
+                <select class="form-select" ng-model="patient.gender" required>
+                    <option value="">Select gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Register Patient
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

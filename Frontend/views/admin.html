@@ -1,0 +1,46 @@
+<table class="table table-bordered text-center">
+
+    <tr class="table-dark">
+        <th>Token</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th style="width:300px;">Doctor Notes</th>
+        <th>Action</th>
+    </tr>
+
+    <tr ng-repeat="a in appointments">
+
+        <td>{{a.token}}</td>
+        <td>{{a.name}}</td>
+
+        <td>
+            <span ng-class="{
+                'text-warning': a.status=='Waiting',
+                'text-primary': a.status=='In Progress',
+                'text-success': a.status=='Done'
+            }">
+                {{a.status}}
+            </span>
+        </td>
+
+        <!-- NEW REMARK TEXTAREA -->
+        <td>
+            <textarea class="form-control"
+                      ng-model="a.remark"
+                      placeholder="Write diagnosis / steps...">
+            </textarea>
+        </td>
+
+        <td>
+            <button class="btn btn-success btn-sm" ng-click="save(a)">
+                Save
+            </button>
+
+            <button class="btn btn-primary btn-sm" ng-click="complete(a)">
+                Done
+            </button>
+        </td>
+
+    </tr>
+
+</table>
